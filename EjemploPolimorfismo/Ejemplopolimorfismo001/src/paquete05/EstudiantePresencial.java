@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package paquete03;
+package paquete05;
+
+
 
 public class EstudiantePresencial extends Estudiante{
     /*1.  Declarar
@@ -29,7 +31,7 @@ public class EstudiantePresencial extends Estudiante{
     // bajo las condiciones propias de la subclase
     @Override
     public void calcularMatricula(){
-        matricula = numeroCreditos + costoCredito;
+        matricula = numeroCreditos * costoCredito;
     }
 
     //  Métodos obtener para los datos o atributos de la clase
@@ -42,5 +44,15 @@ public class EstudiantePresencial extends Estudiante{
     public double obtenerCostoCredito(){
         return costoCredito;
     }
-    
+    @Override
+    public String toString() {
+        String cadenaFinal = String.format("%s", super.toString());
+        cadenaFinal = String.format("%s"
+                + "Numero de Creditos: %d\n"
+                + "Costo de Creditos: %.2f\n",
+                cadenaFinal,
+                numeroCreditos,
+                costoCredito);
+        return cadenaFinal;
+    }
 }
